@@ -99,6 +99,10 @@ All plugins analyzed are compatible with ElizaOS v1.
 - `managePositions({repositionThresholdBps, intervalSeconds, slippageToleranceBps})`
 	- Automatically rebalances Solana Whirlpool LP positions when they drift beyond specified thresholds. Handles close and reopen operations with retry logic.
 
+### Providers
+
+- `positionProvider()`
+    - Load wallet and fetch positions with the `fetchPositions(connection, ownerAddress)` method
 
 ## [plugin-meteora](https://github.com/elizaos-plugins/plugin-meteora)
 
@@ -107,12 +111,22 @@ All plugins analyzed are compatible with ElizaOS v1.
 - `managePositions({repositionThresholdBps, slippageToleranceBps})`
 	- Automates Meteora DLMM liquidity position rebalancing. Removes liquidity from drifted positions and creates new positions centered around active bin using SpotBalanced strategy.
 
+### Providers
+
+- `meteoraPositionProvider()`
+    - Load wallet and fetch positions with the `fetchPositions(connection, ownerAddress)` method
+
 ## [plugin-raydium](https://github.com/elizaos-plugins/plugin-raydium)
 
 ### Onchain Actions
 
 - `managePositions({repositionThresholdBps, intervalSeconds, slippageToleranceBps})`
 	- Orchestrates automated rebalancing of Raydium liquidity positions when they drift beyond specified thresholds. Executes close-and-reopen cycles with retry logic.
+
+### Providers
+
+- `positionProvider()`
+    - Load wallet and fetch positions with the `fetchPositions(connection, ownerAddress)` method
 
 ## [plugin-solana](https://github.com/elizaos-plugins/plugin-solana)
 
@@ -125,3 +139,8 @@ All plugins analyzed are compatible with ElizaOS v1.
 - `transferToken({tokenAddress, recipient, amount})`
 	- **Description**: Transfers SPL tokens from agent's wallet to another address. Manages Associated Token Accounts, creates recipient's ATA if needed, constructs versioned transaction.
 	- **Aliases**: TRANSFER_TOKEN, TRANSFER_TOKENS, SEND_TOKENS, PAY_TOKEN, PAY_TOKENS, PAY
+
+### Providers
+
+- `walletProvider()`
+    - Load each token data holded by the wallet and generate a `text` md variable 
