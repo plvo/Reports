@@ -55,16 +55,16 @@ All plugins analyzed are compatible with ElizaOS v1.
 
 ### Onchain Data
 
-- `getLatestPriceUpdates({priceIds, encoding})`
+- `GET_LATEST_PRICE_UPDATES`
 	- Retrieves latest price updates from Pyth Network with USD conversions and confidence intervals. Supports hex or base64 encoding.
 
-- `getLatestPublisherCaps()`
+- `GET_LATEST_PUBLISHER_CAPS`
 	- Fetches latest publisher stake caps from Pyth Network showing publisher capabilities and limitations.
 
-- `getPriceFeeds({query, filter})`
+- `GET_PRICE_FEEDS`
 	- Retrieves price feeds matching specific criteria with metadata (asset type, symbol, description).
 
-- `getPriceUpdatesStream({priceIds, maxMessages})`
+- `GET_PRICE_UPDATES_STREAM`
 	- Creates EventSource stream for real-time price updates with automatic data collection and formatting.
 
 ## [plugin-dexscreener](https://github.com/elizaos-plugins/plugin-dexscreener)
